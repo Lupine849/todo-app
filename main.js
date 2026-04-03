@@ -13,6 +13,9 @@ todoForm.addEventListener('submit', (e) => {
 
   const li = document.createElement('li');
 
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+
   const span = document.createElement('span');
   span.textContent = task;
 
@@ -24,6 +27,7 @@ todoForm.addEventListener('submit', (e) => {
     li.remove();
   });
 
+  li.appendChild(checkbox);
   li.appendChild(span);
   li.appendChild(deleteBtn);
 
