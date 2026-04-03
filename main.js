@@ -7,7 +7,7 @@ const todoList = document.querySelector('#todo-list');
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const task = todoInput.value;
+  const task = todoInput.value.trim();
 
   if (!task) return;
 
