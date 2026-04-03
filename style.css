@@ -57,9 +57,17 @@ button {
   cursor: pointer;
 }
 
+.delete-btn {
+  background-color: #f44336;
+}
+
 /* ボタンホバー */
 button:hover {
   background-color: #45a049;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
 }
 
 /* リスト */
@@ -71,4 +79,7 @@ ul {
 li {
   padding: 10px;
   border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

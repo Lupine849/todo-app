@@ -19,6 +19,8 @@ todoForm.addEventListener('submit', (e) => {
 
   deleteBtn.textContent = '削除';
 
+  deleteBtn.classList.add('delete-btn');
+
   deleteBtn.addEventListener('click', () => {
     li.remove();
   });
