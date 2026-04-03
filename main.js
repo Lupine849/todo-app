@@ -28,4 +28,6 @@ todoForm.addEventListener('submit', (e) => {
   li.appendChild(deleteBtn);
 
   todoList.appendChild(li);
+
+  todoInput.value = '';
 });
