@@ -83,3 +83,10 @@ li {
   justify-content: space-between;
   align-items: center;
 }
+
+/* タスク左側（checkbox + text） */
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

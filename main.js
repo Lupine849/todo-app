@@ -13,11 +13,17 @@ todoForm.addEventListener('submit', (e) => {
 
   const li = document.createElement('li');
 
+  const taskLeft = document.createElement('div');
+  taskLeft.classList.add('task-left');
+
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
 
   const span = document.createElement('span');
   span.textContent = task;
+
+  taskLeft.appendChild(checkbox);
+  taskLeft.appendChild(span);
 
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = '削除';
@@ -27,8 +33,7 @@ todoForm.addEventListener('submit', (e) => {
     li.remove();
   });
 
-  li.appendChild(checkbox);
-  li.appendChild(span);
+  li.appendChild(taskLeft);
   li.appendChild(deleteBtn);
 
   todoList.appendChild(li);
