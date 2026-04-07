@@ -97,3 +97,8 @@ li input[type="checkbox"] {
   height: 16px;
   transform: translateY(1px);
 }
+
+/* タスク完了時の横線 */
+.completed {
+  text-decoration-line: line-through;
+}

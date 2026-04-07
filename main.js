@@ -22,6 +22,10 @@ todoForm.addEventListener('submit', (e) => {
   const span = document.createElement('span');
   span.textContent = task;
 
+  checkbox.addEventListener('change', () => {
+    span.classList.toggle('completed', checkbox.checked);
+  });
+
   taskLeft.appendChild(checkbox);
   taskLeft.appendChild(span);
 
