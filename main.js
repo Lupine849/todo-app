@@ -6,6 +6,21 @@ const todoList = document.querySelector('#todo-list');
 
 let tasks = [];
 
+function saveTasks() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+
+  const savedTasks = localStorage.getItem('tasks');
+
+  if (savedTasks) {
+    tasks = JSON.parse(savedTasks);
+    renderTasks();
+  }
+
+}
+
 function renderTasks() {
 
   todoList.innerHTML = '';
@@ -35,7 +50,11 @@ function renderTasks() {
     deleteBtn.classList.add('delete-btn');
 
     deleteBtn.addEventListener('click', () => {
+      
       tasks.splice(index, 1);
+
+      saveTasks();
+
       renderTasks();
     });
 
@@ -48,6 +67,8 @@ function renderTasks() {
 
 }
 
+loadTasks();
+
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -56,6 +77,8 @@ todoForm.addEventListener('submit', (e) => {
   if (!task) return;
 
   tasks.push(task);
+
+  saveTasks();
 
   renderTasks();
 
