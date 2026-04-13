@@ -102,3 +102,24 @@ li input[type="checkbox"] {
 .completed {
   text-decoration-line: line-through;
 }
+
+/* 操作エリア */
+.todo-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* 操作エリアのボタン */
+.todo-actions button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* 操作ボタンのホバー時 */
+.todo-actions button:hover {
+  text-decoration: underline;
+}
