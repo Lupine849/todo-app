@@ -3,6 +3,8 @@
 const todoForm = document.querySelector('#todo-form');
 const todoInput = document.querySelector('#todo-input');
 const todoList = document.querySelector('#todo-list');
+const resetCheck = document.querySelector('#reset-check');
+const clearAll = document.querySelector('#clear-all');
 
 let tasks = [];
 
@@ -35,11 +37,21 @@ function renderTasks() {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
 
+    checkbox.checked = task.completed;
+
     const span = document.createElement('span');
-    span.textContent = task;
+    span.textContent = task.text;
+
+    if (task.completed) {
+      span.classList.add('completed');
+    }
 
     checkbox.addEventListener('change', () => {
+      task.completed = checkbox.checked;
+
       span.classList.toggle('completed', checkbox.checked);
+
+      saveTasks();
     });
 
     taskLeft.appendChild(checkbox);
@@ -76,7 +88,10 @@ todoForm.addEventListener('submit', (e) => {
 
   if (!task) return;
 
-  tasks.push(task);
+  tasks.push({
+    text: task,
+    completed: false
+  });
 
   saveTasks();
 
