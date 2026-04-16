@@ -99,3 +99,13 @@ todoForm.addEventListener('submit', (e) => {
 
   todoInput.value = '';
 });
+
+resetCheck.addEventListener('click', () => {
+
+  tasks.forEach((task) => {
+    task.completed = false;
+  });
+
+  saveTasks();
+  renderTasks();
+});
