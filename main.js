@@ -109,3 +109,11 @@ resetCheck.addEventListener('click', () => {
   saveTasks();
   renderTasks();
 });
+
+clearAll.addEventListener('click', () => {
+  
+  tasks = [];
+
+  saveTasks();
+  renderTasks();
+});
